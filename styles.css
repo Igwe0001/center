@@ -1,0 +1,686 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Nav */
+
+  /* Body */
+  --loader-bg: #1c273a;
+  --beige: #f5f5dc;
+  --deep-red: #960c22;
+  --light-red: #c8102e;
+  --gold: #d4af37;
+  --yellow: #ffff00;
+  --deep-red-rgb: 150, 12, 34;
+  --light-red-rgb: 200, 16, 46;
+  --dark-grey: #54585a;
+
+  /* Main  */
+  --Main-color: #fff;
+}
+
+html {
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-x: initial !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--beige);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+}
+
+header.sticky {
+  box-shadow: 0 0 20px 0 var(--box-shadow);
+  background-color: var(--deep-red);
+}
+
+header .header {
+  animation-delay: 4.6s;
+  height: 70px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+}
+
+.logo {
+  font-size: 2.5rem;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  color: var(--Main-color);
+  display: flex;
+}
+
+.logo .text {
+  text-transform: uppercase;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.logo .text span:last-child {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Mobile */
+nav {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 50%;
+  width: 90%;
+  height: 100vh;
+  transition: all 0.3s ease-out;
+  background-color: var(--deep-red);
+  box-shadow: 0px 0px 10px var(--box-shadow);
+  z-index: 1;
+  transform: translateX(100%);
+}
+
+.nav-toggle {
+  transform: translateX(-34%);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  column-gap: 2.5rem;
+  row-gap: 3rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--Main-color);
+  font-size: 1.5rem;
+}
+
+.active,
+.link:hover {
+  color: var(--yellow);
+  transition: all 0.2s ease;
+}
+
+.hamburger {
+  z-index: 1;
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  margin: 7px 0;
+  background-color: var(--Main-color);
+  transition: all 0.3s ease-out;
+}
+
+.line1.trans {
+  transform: rotate(43deg);
+  transform-origin: 0px;
+}
+
+.line2.trans {
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.line3.trans {
+  transform: rotate(-43deg);
+  transform-origin: 0px;
+}
+
+/* Sections  */
+
+section {
+  min-height: 100dvh;
+  height: 100%;
+  padding-top: 90px;
+}
+
+/* Hero section */
+
+.section-1 {
+  padding-top: 0;
+  background: linear-gradient(
+      rgba(var(--light-red-rgb), 0.6),
+      rgba(var(--light-red-rgb), 0.6)
+    ),
+    url("/Images/sugarland-1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80dvh;
+}
+
+.section-1 .container {
+  text-align: center;
+}
+
+.section-1 .container {
+  font-size: clamp(30px, 4vw, 60px);
+  color: white;
+}
+
+.section-2 {
+  min-height: 80dvh;
+}
+
+.section-2 .container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-2 h1 {
+  text-align: center;
+
+  font-size: clamp(25px, 3vw, 40px);
+  color: var(--light-red);
+}
+
+.section-2 .video-container {
+  width: 100%;
+  max-width: 560px;
+  margin: auto;
+}
+
+.section-2 iframe {
+  /* width="560" height="315" */
+  width: 100%;
+  height: 315px;
+}
+
+.section-2 .text-container {
+  margin-top: 20px;
+  text-align: center;
+  font-size: clamp(18px, 2vw, 20px);
+  color: var(--dark-grey);
+}
+
+.section-2 .text-container h2 {
+  color: var(--light-red);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.section-3 h1 {
+  text-align: center;
+  font-size: clamp(25px, 3vw, 40px);
+  color: var(--light-red);
+}
+
+.section-3 .container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+figure {
+  position: relative;
+  flex: 0 0 100%;
+}
+
+figure img {
+  width: 100%;
+}
+
+figcaption {
+  position: absolute;
+  color: white;
+  z-index: 1000;
+  top: 30%;
+  left: 5%;
+  font-weight: bold;
+  font-size: 120%;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 300;
+  width: 80%;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.image-container figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  margin: 0;
+}
+
+.image-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.image-container figcaption {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 1rem;
+} */
+
+/* Footer */
+
+footer .footer-logo {
+  img {
+    width: 45%;
+  }
+}
+
+footer {
+  background-color: var(--light-red);
+  margin-top: 30px;
+  margin: 30px auto 0;
+}
+
+footer .container {
+  margin: auto;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* justify-content: space-between; */
+
+.contact-data {
+  margin-top: 10px;
+  color: white;
+  span {
+    display: block;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.socials {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  ul {
+    display: flex;
+    gap: 15px;
+  }
+  li {
+    list-style: none;
+  }
+  i {
+    color: white;
+  }
+}
+
+.copywrite {
+  text-align: center;
+  background-color: var(--dark-grey);
+  color: white;
+  padding: 5px;
+}
+
+/* ================================== */
+
+/* FAQ Page */
+
+.faq.section-1 {
+  min-height: 70dvh;
+  background: linear-gradient(
+      rgba(var(--light-red-rgb), 0.6),
+      rgba(var(--light-red-rgb), 0.6)
+    ),
+    url("/Images/sugarland-5.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.faq .container {
+  margin-top: 20px;
+}
+
+.accordion {
+  max-width: inherit;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  padding: 15px;
+  border-radius: 8px;
+
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--deep-red);
+}
+.accordion .accordion-content {
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid var(--deep-red);
+  overflow: hidden;
+}
+
+.accordion-content.open {
+  padding-bottom: 10px;
+}
+.accordion-content header {
+  position: initial;
+  display: flex;
+  min-height: 50px;
+  padding: 0 15px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s linear;
+}
+.accordion-content.open header {
+  min-height: 35px;
+}
+.accordion-content header .title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 500;
+  color: var(--light-red);
+}
+.accordion-content header i {
+  font-size: 15px;
+  color: var(--light-red);
+}
+.accordion-content .description {
+  height: 0;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  color: var(--dark-grey);
+  font-weight: 400;
+  padding: 0 15px;
+  transition: all 0.2s linear;
+}
+
+/* =============================== */
+
+/* About page */
+
+.about.section-1 {
+  min-height: 70dvh;
+  background: linear-gradient(
+      rgba(var(--light-red-rgb), 0.6),
+      rgba(var(--light-red-rgb), 0.6)
+    ),
+    url("/Images/sugarland-3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.about.section-2 {
+  p {
+    text-align: center;
+    font-size: clamp(1.2rem, 1.5vw, 2rem);
+    color: var(--dark-grey);
+    margin: auto;
+    width: 70%;
+    max-width: 500px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.about .statement {
+  margin-top: 20px;
+  .statement-image {
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .statement-image {
+    margin-bottom: 10px;
+  }
+
+   .statement-text {
+    padding: 20px;
+  }
+}
+
+/* ===================================== */
+
+/* Form Page*/
+
+.booking.section-1 {
+  min-height: 70dvh;
+  background: linear-gradient(
+      rgba(var(--light-red-rgb), 0.6),
+      rgba(var(--light-red-rgb), 0.6)
+    ),
+    url("/Images/sugarland-2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.booking.section-2 .container {
+  display: initial;
+}
+
+form {
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto;
+  outline: 1px solid var(--light-red);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--deep-red);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  /* outline: none; */
+  border: none;
+  outline: 1px solid var(--deep-red);
+}
+
+input:focus {
+  border: 2px solid var(--light-red);
+}
+
+button {
+  padding: 10px 15px;
+  background-color: var(--deep-red);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 769px) {
+  .section-1 {
+    min-height: 100dvh;
+  }
+
+  nav {
+    position: initial;
+    height: initial;
+    display: initial;
+    transform: none;
+    transition: none;
+    width: initial;
+    outline: none;
+    box-shadow: none;
+    background-color: initial;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  nav ul {
+    flex-direction: row;
+  }
+
+  nav a {
+    font-size: 1.3rem;
+  }
+
+  .section-2 .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 30px;
+    margin: 40px auto 0;
+  }
+
+  .section-2 .text-container {
+    text-align: left;
+    margin-top: 0;
+    padding-top: 30px;
+    width: 500px;
+  }
+
+  .section-3 .container {
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr; */
+    grid-gap: 10px;
+  }
+
+  figure {
+    flex: 0 0 350px;
+  }
+
+  figcaption {
+    top: 70%;
+  }
+
+  /* Footer */
+
+  footer .container {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .contact {
+    text-align: left;
+    align-items: start;
+  }
+
+  /* ==================================== */
+
+  /* About */
+
+  .statement-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .about .mission p {
+    text-align: left;
+  }
+
+  .about .vision .statement-container {
+    flex-direction: row-reverse;
+    p {
+      text-align: left;
+    }
+  }
+
+  .statement-text {
+    flex: 1;
+  }
+
+  .statement-image {
+    flex: 1;
+  }
+
+  /* ============================ */
+}
